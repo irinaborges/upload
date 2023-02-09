@@ -16,6 +16,7 @@ app.use("/tematicas/sugeridas", require("./tematicas/tematicas_sugeridas.js"));
 app.use("/dislikes", require("./videos/dislike"));
 app.use("/videos/tematica", require("./tematicas/tematica_videos"));
 app.use("/comentarios/video", require("./videos/comentarios_video.js"));
+app.use("/comentarios", require("./videos/comentarios_video.js"));
 app.use("/canais", require("./canais/canais.js"));
 app.use("/canal", require("./canais/canal.js"));
 app.use("/videos/canal", require("./canais/canal_videos.js"));
