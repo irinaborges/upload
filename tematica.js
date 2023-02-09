@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const query = require("../query");
+const query = require("./query");
 
 router.get('/', async function (req, res) {
     let tematicas = await query("select id, nome as title, descricao as description, capa as header, imagem as thumbnail FROM tematica")
