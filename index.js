@@ -20,6 +20,10 @@ app.use("/comentarios", require("./videos/comentarios_video.js"));
 app.use("/canais", require("./canais/canais.js"));
 app.use("/canal", require("./canais/canal.js"));
 app.use("/videos/canal", require("./canais/canal_videos.js"));
+app.use("/playlists", require("./playlists/playlists.js"));
+app.use("/playlist", require("./playlists/playlist.js"));
+app.use("/videos/playlist", require("./playlists/playlist_videos.js"));
+
 //app.use("/autores", require("./autores.js"));
 //app.use("/livros", require("./livros.js"));
 //app.use("/autores", require("./autores.js"));
