@@ -20,8 +20,8 @@ app.use("/comentarios", require("./comentario.js"));
 app.use("/canais", require("./canal.js"));
 app.use("/canal", require("./canal.js"));
 app.use("/videos/canal", require("./canal.js"));
-app.use("/playlists", require("./playlist.js"));
 app.use("/playlist", require("./playlist.js"));
-app.use("/videos/playlist", require("./playlist.js"));
+app.use("/categoria", require("./categoria.js"));
+app.use("/videos/categoria", require("./categoria.js"));
 
 app.listen(3000);
