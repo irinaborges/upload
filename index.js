@@ -7,7 +7,7 @@ app.use(express.json());
 app.use("/videos", require("./videos/videos.js"));
 app.use("/video", require("./videos/video.js"));
 app.use("/canais", require("./canais/canais.js"));
-app.use("/canal", require("./canais/canal.js"));
+app.use("/canais", require("./canais/canal.js"));
 app.use("/comentarios/canal", require("./canais/comentarios_canal"));
 app.use("/videos/canal", require("./canais/canal_videos.js"));
 app.use("/tematica", require("./tematicas/tematica.js"));
