@@ -15,12 +15,4 @@ router.get('/', async function (req, res) {
     res.json(videos);
 });
 
-// Post video comments
-router.post("/comentario", async function (req, res) {
-    const comment_type = req.body.comment_type[0].target_id;
-    if (comment_type === "video_comments") {
-
-    }
-});
-
 module.exports = router;
