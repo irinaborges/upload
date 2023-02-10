@@ -2,14 +2,22 @@ const express = require("express");
 const router = express.Router();
 const query = require("./query");
 
-// todas as tags
+//todas as tags
 router.get('/', async function (req, res) {
-    let tags = await query("SELECT * FROM tag")
+    let tags = await query("select v.id as id, v.url_youtube as videos, v.duracao as duration, v.data_publicacao as date, v.titulo as title, vt.tag as tag from video_tag vt, video v where vt.video = v.id and vt.tag = ?", [req.params.name]);
     res.json(tags);
 });
 
-// videos de cada tag pelo id
-router.get('/:id', async function (req, res) {
-    let tag = await query("SELECT v.url_youtube as video, cn.descricao as channel, ct.designacao as category, v.descricao as description, v.duracao as duration, \"tags\" as tags, v.titulo as title, ct.id as categories_id, 0 as tags_id, cn.id as channel_id, v.data_publicacao as date, p.playlist as playlist_id, v.id as id FROM video v, playlist_video p, categoria ct, canal cn WHERE v.id = p.video and v.canal = cn.id and v.categoria = ct.id and p.playlist = ?", [req.params.id]);
-    res.json(tag);
+// videos de cada tag pelo nome
+router.get('/:name', async function (req, res) {
+    let tagvideo = await query("select v.id as id, v.url_youtube as videos, v.duracao as duration, v.data_publicacao as date, v.titulo as title, vt.tag as tag from video_tag vt, video v where vt.video = v.id and vt.tag = ?", [req.params.name]);
+    res.json(tagvideo);
 });
+
+// videos de cada tag pelo id
+// router.get('videos/:id', async function (req, res) {
+//     let tagvideo = await query("select v.id as id, v.url_youtube as videos, v.duracao as duration, v.data_publicacao as date, v.titulo as title, vt.tag as tag from video_tag vt, video v where vt.video = v.id and vt.tag = ?", [req.params.id]);
+//     res.json(tagvideo);
+// });
+
+module.exports = router;

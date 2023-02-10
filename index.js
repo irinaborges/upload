@@ -16,6 +16,6 @@ app.use("/canal", require("./canal.js"));
 app.use("/videos/canal", require("./canal.js"));
 app.use("/playlist", require("./playlist.js"));
 app.use("/categoria", require("./categoria.js"));
-app.use("/videos/categoria", require("./categoria.js"));
+app.use("/tags", require("./tag.js"));
 
 app.listen(3000);
