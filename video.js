@@ -4,8 +4,8 @@ const query = require("./query");
 
 //Get video details
 
-router.get('/:slug', async function (req, res) {
-    let video = await query("select id, slug, titulo as title, categoria as categories, url_youtube as video, canal as channel_id, miniatura as logo, data_publicacao as date, descricao as description FROM video WHERE slug = ?", [req.params.slug]);
+router.get('/:id', async function (req, res) {
+    let video = await query("SELECT id, slug, titulo as title, categoria as categories, url_youtube as video, canal as channel_id, miniatura as logo, data_publicacao as date, descricao as description FROM video WHERE id = ?", [req.params.id]);
     res.json(video);
 });
 
